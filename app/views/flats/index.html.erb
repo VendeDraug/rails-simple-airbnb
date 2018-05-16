@@ -1,0 +1,26 @@
+<h1>List of flats</h1>
+
+<div class="container">
+  <div class="row">
+    <% @flats.each do |flat|%>
+    <div class="col-xs-4">
+      <div class="card-content">
+        <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=1200')"></div>
+        <div class="card-details">
+          <h3><%= flat.name %></h3>
+          <p><%= flat.address %></p>
+          <div class="card-flex">
+            <div><i class="fas fa-users"></i>    <%= flat.number_of_guests %></div>
+            <div><i class="fas fa-pound-sign"></i>    <%= flat.price_per_night %></div>
+          </div>
+        </div>
+        <div class="flat-options">
+          <%= link_to "More details", flat_path(flat) %>
+          <%= link_to "Edit", flats_path %>
+          <%= link_to "Remove", flats_path %>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
